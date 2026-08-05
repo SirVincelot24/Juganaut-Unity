@@ -13,8 +13,36 @@ MonoBehaviour:
   m_Name: Game Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: Game
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 94461abb50c028fd3b60aaf64bb83995
+  m_Entries:
+  - m_Id: 12687073280
+    m_Key: game_over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74011992064
+    m_Key: won
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159387049984
+    m_Key: death.monster_catches_player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 370113077248
+    m_Key: death.player_walks_into_monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 541588807680
+    m_Key: death.rock_hits_player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742181396480
+    m_Key: death.explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 839933845504
+    m_Key: win.all_diamonds
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

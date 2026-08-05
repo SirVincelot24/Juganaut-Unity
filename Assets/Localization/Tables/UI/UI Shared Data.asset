@@ -35,52 +35,8 @@ MonoBehaviour:
     m_Key: back
     m_Metadata:
       m_Items: []
-  - m_Id: 263577893429248
-    m_Key: general
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263652455571456
-    m_Key: language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263722680803328
-    m_Key: theme
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263775617114112
-    m_Key: dark
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263938209308672
-    m_Key: light
-    m_Metadata:
-      m_Items: []
-  - m_Id: 264080840810496
-    m_Key: system
-    m_Metadata:
-      m_Items: []
-  - m_Id: 264499583344640
-    m_Key: game_renderer
-    m_Metadata:
-      m_Items: []
-  - m_Id: 264583532339200
-    m_Key: scale
-    m_Metadata:
-      m_Items: []
-  - m_Id: 264755301670912
-    m_Key: automatic
-    m_Metadata:
-      m_Items: []
-  - m_Id: 264930095095808
-    m_Key: scale_factor
-    m_Metadata:
-      m_Items: []
-  - m_Id: 265018624270336
-    m_Key: min_edge_distance
-    m_Metadata:
-      m_Items: []
-  - m_Id: 265153718607872
-    m_Key: New Entry
+  - m_Id: 713668517888
+    m_Key: stop
     m_Metadata:
       m_Items: []
   m_Metadata:

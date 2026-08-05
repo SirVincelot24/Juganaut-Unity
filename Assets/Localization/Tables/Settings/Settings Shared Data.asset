@@ -15,26 +15,6 @@ MonoBehaviour:
   m_TableCollectionName: Settings
   m_TableCollectionNameGuidString: 4d6fa0088101c2439a22a676cd7c9436
   m_Entries:
-  - m_Id: 204664561664
-    m_Key: app_name
-    m_Metadata:
-      m_Items: []
-  - m_Id: 327805132800
-    m_Key: start_game
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263365556789248
-    m_Key: quit
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263449891659776
-    m_Key: settings
-    m_Metadata:
-      m_Items: []
-  - m_Id: 263511539539968
-    m_Key: back
-    m_Metadata:
-      m_Items: []
   - m_Id: 263577893429248
     m_Key: general
     m_Metadata:
@@ -80,7 +60,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 265153718607872
-    m_Key: New Entry
+    m_Key: world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266371346030592
+    m_Key: reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266452975575040
+    m_Key: width
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266522001235968
+    m_Key: height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266567689789440
+    m_Key: diamonds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266651789778944
+    m_Key: monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266701202874368
+    m_Key: bombs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266752771842048
+    m_Key: rocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266816638509056
+    m_Key: audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267145476136960
+    m_Key: master_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266878370275328
+    m_Key: music_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267014047621120
+    m_Key: sfx_volume
     m_Metadata:
       m_Items: []
   m_Metadata:

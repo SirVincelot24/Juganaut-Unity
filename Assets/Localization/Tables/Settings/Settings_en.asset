@@ -18,24 +18,24 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 204664561664
-    m_Localized: Juganaut
+  - m_Id: 266567689789440
+    m_Localized: Diamonds
     m_Metadata:
       m_Items: []
-  - m_Id: 327805132800
-    m_Localized: Start Game
+  - m_Id: 266522001235968
+    m_Localized: Height
     m_Metadata:
       m_Items: []
-  - m_Id: 263365556789248
-    m_Localized: Quit
+  - m_Id: 266452975575040
+    m_Localized: Width
     m_Metadata:
       m_Items: []
-  - m_Id: 263449891659776
-    m_Localized: Settings
+  - m_Id: 266371346030592
+    m_Localized: Reset
     m_Metadata:
       m_Items: []
-  - m_Id: 263511539539968
-    m_Localized: Back
+  - m_Id: 265153718607872
+    m_Localized: World
     m_Metadata:
       m_Items: []
   - m_Id: 263577893429248
@@ -80,6 +80,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 265018624270336
     m_Localized: Min. Edge Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266651789778944
+    m_Localized: Monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266701202874368
+    m_Localized: Bombs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266752771842048
+    m_Localized: Rocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266816638509056
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 266878370275328
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267014047621120
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267145476136960
+    m_Localized: Master Volume
     m_Metadata:
       m_Items: []
   references:

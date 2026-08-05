@@ -16,8 +16,44 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 94461abb50c028fd3b60aaf64bb83995, type: 2}
   m_Metadata:
-    m_Items: []
-  m_TableData: []
+    m_Items:
+    - rid: 1568451264882147331
+  m_TableData:
+  - m_Id: 12687073280
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74011992064
+    m_Localized: Won Game!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159387049984
+    m_Localized: Player was eaten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 370113077248
+    m_Localized: Player ran into trouble
+    m_Metadata:
+      m_Items: []
+  - m_Id: 541588807680
+    m_Localized: Player was squashed by a rock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742181396480
+    m_Localized: Player exploded
+    m_Metadata:
+      m_Items: []
+  - m_Id: 839933845504
+    m_Localized: All {game.diamondCount} diamonds collected!
+    m_Metadata:
+      m_Items:
+      - rid: 1568451264882147331
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1568451264882147331
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 839933845504
