@@ -13,6 +13,50 @@
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
-        <ui:VisualElement name="SettingsContainer" style="flex-grow: 1;"/>
+        <ui:ScrollView name="SettingsContainer" class="SettingsContainer">
+            <ui:VisualElement name="General" class="SettingSubContainer" style="flex-grow: 1;">
+                <ui:Label text="Label" name="Title" class="SettingsCategory">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(263577893429248)"/>
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement name="GameRenderer" class="SettingSubContainer" style="flex-grow: 1;">
+                <ui:Label text="Label" name="Title" class="SettingsCategory">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(264499583344640)"/>
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement name="World" class="SettingSubContainer" style="flex-grow: 1;">
+                <ui:Label text="Label" name="Title" class="SettingsCategory">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(265153718607872)"/>
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+            <ui:VisualElement name="Audio" class="SettingSubContainer" style="flex-grow: 1;">
+                <ui:Label text="Label" name="Title" class="SettingsCategory">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266816638509056)"/>
+                    </Bindings>
+                </ui:Label>
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="MasterVol" low-value="0.0001" fill="true" class="Slider">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267145476136960)"/>
+                    </Bindings>
+                </ui:Slider>
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="MusicVol" low-value="0.0001" fill="true" class="Slider">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266878370275328)"/>
+                    </Bindings>
+                </ui:Slider>
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="SfxVol" low-value="0.0001" fill="true" class="Slider">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267014047621120)"/>
+                    </Bindings>
+                </ui:Slider>
+            </ui:VisualElement>
+        </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>

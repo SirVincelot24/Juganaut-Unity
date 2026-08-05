@@ -34,3 +34,44 @@
 .Background {
     background-color: var(--surfaceContainer);
 }
+
+.SettingsContainer {
+    flex-grow: 1;
+}
+
+.SettingSubContainer {
+}
+
+.SettingsCategory {
+    font-size: 40px;
+    -unity-text-align: middle-left;
+    padding: 50px 0 20px;
+    color: var(--onTertiaryContainer);
+}
+
+.Slider {
+    font-size: 30px;
+    color: var(--onBackground);
+}
+
+.unity-base-slider__tracker{
+    background-color: var(--secondaryContainer);
+    border-width: 0;
+    border-radius: 5px;
+    height: 20px;
+    top: 22px;
+}
+
+.unity-base-slider__fill{
+    background-color: var(--primary);
+    border-width: 0;
+    border-radius: 5px;
+}
+
+.unity-base-slider__dragger{
+    background-color: var(--primary);
+    border-color: var(--surfaceContainer);
+    border-radius: 5px;
+    height: 40px;
+    width: 10px;
+}
