@@ -1,0 +1,36 @@
+:root {
+}
+
+.TitleBar {
+    flex-grow: 0;
+    background-color: var(--primary);
+}
+
+.Title {
+    font-size: 40px;
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+    align-self: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: var(--onPrimary);
+}
+
+.BackButton {
+    font-size: 40px;
+    color: var(--onTertiaryContainer);
+    background-color: var(--tertiaryContainer);
+    border-width: 0;
+    border-radius: 5px;
+}
+
+.Background {
+    background-color: var(--surfaceContainer);
+}

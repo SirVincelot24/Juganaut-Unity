@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/Settings.uss?fileID=7433441132597879392&amp;guid=8cd85a7eaa863a8559e082bac4b625ac&amp;type=3#Settings"/>
+    <ui:VisualElement name="Root" class="Background" style="flex-grow: 1;">
+        <ui:VisualElement name="TitleBar" class="TitleBar" style="flex-direction: row;">
+            <ui:Button text="Button" name="Back" class="BackButton">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263511539539968)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Label text="Label" name="Title" class="Title">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263449891659776)"/>
+                </Bindings>
+            </ui:Label>
+        </ui:VisualElement>
+        <ui:VisualElement name="SettingsContainer" style="flex-grow: 1;"/>
+    </ui:VisualElement>
+</ui:UXML>
