@@ -1,0 +1,27 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/General.uss?fileID=7433441132597879392&amp;guid=804dab4c8c1407bcfa1377b81634151f&amp;type=3#General"/>
+    <ui:VisualElement name="Root" style="flex-grow: 1;">
+        <ui:VisualElement name="ButtonContainer" class="ButtonContainer">
+            <ui:Button text="Button" name="Start" class="StartButton">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(327805132800)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Button" name="Settings" class="SettingsButton">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263449891659776)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Button" name="Quit" class="QuitButton">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263365556789248)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:Label text="Label" name="Title" class="Title">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(204664561664)"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

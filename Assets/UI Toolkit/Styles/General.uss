@@ -1,0 +1,62 @@
+:root {
+}
+
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=144c08bb2561d5180863a28c29ab5b5e&type=3#NotInter-Regular");
+    -unity-text-align: middle-center;
+}
+
+.Title {
+    font-size: 120px;
+    color: rgb(255, 0, 128);
+    -unity-font-style: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: auto;
+}
+
+.StartButton {
+    padding: 20px;
+    margin: 30px;
+    font-size: 60px;
+    color: var(--onPrimaryContainer);
+    background-color: var(--primaryContainer);
+    border-radius: 5px;
+    border-color: var(--onPrimaryContainer);
+    border-width: 5px;
+}
+
+.SettingsButton {
+    font-size: 60px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    color: var(--onTertiaryContainer);
+    background-color: var(--tertiaryContainer);
+    margin: 5px;
+}
+
+.QuitButton {
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 0;
+    color: var(--onErrorContainer);
+    background-color: var(--errorContainer);
+    margin: 5px;
+}
+
+.ButtonContainer {
+    align-self: center;
+    position: absolute;
+    flex-grow: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
