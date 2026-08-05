@@ -1,0 +1,37 @@
+:root{
+    --primary: rgb(160, 211, 154);
+    --onPrimary: rgb(9, 57, 16);
+    --primaryContainer: rgb(35, 80, 36);
+    --onPrimaryContainer: rgb(188, 240, 181);
+    --secondary: rgb(185, 204, 180);
+    --onSecondary: rgb(37, 52, 35);
+    --secondaryContainer: rgb(59, 75, 56);
+    --onSecondaryContainer: rgb(213, 232, 207);
+    --tertiary: rgb(161, 207, 212);
+    --onTertiary: rgb(0, 54, 59);
+    --tertiaryContainer: rgb(31, 77, 82);
+    --onTertiaryContainer: rgb(188, 235, 241);
+    --error: rgb(255, 180, 171);
+    --onError: rgb(105, 0, 5);
+    --errorContainer: rgb(147, 0, 10);
+    --onErrorContainer: rgb(255, 218, 214);
+    --background: rgb(16, 20, 15);
+    --onBackground: rgb(224, 228, 219);
+    --surface: rgb(16, 20, 15);
+    --onSurface: rgb(224, 228, 219);
+    --surfaceVariant: rgb(66, 73, 64);
+    --onSurfaceVariant: rgb(194, 201, 189);
+    --outline: rgb(140, 147, 136);
+    --outlineVariant: rgb(66, 73, 64);
+    --scrim: rgb(0, 0, 0);
+    --inverseSurface: rgb(224, 228, 219);
+    --inverseOnSurface: rgb(45, 50, 44);
+    --inversePrimary: rgb(59, 105, 58);
+    --surfaceDim: rgb(16, 20, 15);
+    --surfaceBright: rgb(54, 58, 52);
+    --surfaceContainerLowest: rgb(11, 15, 10);
+    --surfaceContainerLow: rgb(24, 29, 23);
+    --surfaceContainer: rgb(28, 33, 27);
+    --surfaceContainerHigh: rgb(39, 43, 37);
+    --surfaceContainerHighest: rgb(50, 54, 48);
+}
