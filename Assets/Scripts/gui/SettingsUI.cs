@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 namespace gui
@@ -13,7 +11,7 @@ namespace gui
 
         private Button _backButton;
         
-        private void OnEnable()
+        private void Awake()
         {
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.enabled = true;
@@ -21,7 +19,11 @@ namespace gui
             
             _backButton = _uiDocument.rootVisualElement.Q<Button>("Back");
             
-            _backButton.RegisterCallback<ClickEvent>(_ => menuStateHandler.CloseSettingsMenu());
+            _backButton.RegisterCallback<ClickEvent>(_ =>
+            {
+                Debug.Log("Back button clicked");
+                menuStateHandler.CloseSettingsMenu();
+            });
         }
     }
 }

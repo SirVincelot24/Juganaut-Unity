@@ -13,7 +13,7 @@ namespace gui
         private Button _settingsButton;
         private Button _quitButton;
         
-        private void Start()
+        private void Awake()
         {
             _uiDocument = GetComponent<UIDocument>();
             
