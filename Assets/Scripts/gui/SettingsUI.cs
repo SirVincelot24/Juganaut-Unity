@@ -6,6 +6,7 @@ namespace gui
     public class SettingsUI : MonoBehaviour
     {
         public MenuStateHandler menuStateHandler;
+        public SettingsManager settingsManager;
         
         private UIDocument _uiDocument;
 
@@ -18,6 +19,8 @@ namespace gui
             _uiDocument.rootVisualElement.visible = false;
             
             _backButton = _uiDocument.rootVisualElement.Q<Button>("Back");
+
+            _uiDocument.rootVisualElement.dataSource = settingsManager; 
             
             _backButton.RegisterCallback<ClickEvent>(_ =>
             {

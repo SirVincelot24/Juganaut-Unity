@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,6 +9,7 @@ public partial class SettingsManager : MonoBehaviour
     public AudioMixer audioMixer;
     
     [Header("Settings")]
+    [CreateProperty]
     public float MasterVolume
     {
         get => _floatSettings[Settings.MasterVolume];
@@ -18,7 +19,7 @@ public partial class SettingsManager : MonoBehaviour
             SetMasterVolume(value);
         }
     }
-
+    [CreateProperty]
     public float MusicVolume
     {
         get => _floatSettings[Settings.MusicVolume];
@@ -28,7 +29,7 @@ public partial class SettingsManager : MonoBehaviour
             SetMusicVolume(value);
         }
     }
-
+    [CreateProperty]
     public float SfxVolume
     {
         get => _floatSettings[Settings.SfxVolume];
@@ -48,17 +49,17 @@ public partial class SettingsManager : MonoBehaviour
 
     private void SetMasterVolume(float value)
     {
-        audioMixer.SetFloat("MasterVolume", value);
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
     }
 
     private void SetMusicVolume(float value)
     {
-        audioMixer.SetFloat("MusicVolume", value);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
     }
 
     private void SetSfxVolume(float value)
     {
-        audioMixer.SetFloat("SfxVolume", value);
+        audioMixer.SetFloat("SfxVolume", Mathf.Log10(value) * 20);
     }
     
     private void Start()
@@ -68,7 +69,7 @@ public partial class SettingsManager : MonoBehaviour
 
     public void LoadSettings()
     {
-        foreach (var key in _floatSettings.Keys)
+        foreach (var key in new List<string>(_floatSettings.Keys))
         {
             _floatSettings[key] = PlayerPrefs.GetFloat(key, _floatSettings[key]);
         }

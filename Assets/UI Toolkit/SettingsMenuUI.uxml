@@ -44,16 +44,19 @@
                 <ui:Slider label="Slider" value="0.5" high-value="1" name="MasterVol" low-value="0.0001" fill="true" class="Slider">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267145476136960)"/>
+                        <ui:DataBinding property="value" data-source-path="MasterVolume" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="Slider" value="0.5" high-value="1" name="MusicVol" low-value="0.0001" fill="true" class="Slider">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266878370275328)"/>
+                        <ui:DataBinding property="value" data-source-path="MusicVolume" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:Slider>
                 <ui:Slider label="Slider" value="0.5" high-value="1" name="SfxVol" low-value="0.0001" fill="true" class="Slider">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267014047621120)"/>
+                        <ui:DataBinding property="value" data-source-path="SfxVolume" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:Slider>
             </ui:VisualElement>

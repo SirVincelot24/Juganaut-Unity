@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 261009909929712831}
   - component: {fileID: 908408940443637217}
   - component: {fileID: 3769822120862525807}
-   - component: {fileID: 6488889567148521681}
+  - component: {fileID: 6488889567148521681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -142,8 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   audioMixer: {fileID: 24100000, guid: 4e06d8c65607d25b5b314d7367ebc9a9, type: 2}
-  musicVolume: 0
-  sfxVolume: 0
 --- !u!1 &6527443460475121765
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,3 +211,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::gui.SettingsUI
   menuStateHandler: {fileID: 3769822120862525807}
+  settingsManager: {fileID: 6488889567148521681}
