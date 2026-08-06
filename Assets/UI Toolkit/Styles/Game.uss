@@ -1,0 +1,63 @@
+:root {
+}
+
+.TitleBar {
+    background-color: var(--surfaceContainer);
+}
+
+.DiamondLabel {
+    color: var(--onTertiaryContainer);
+    flex-grow: 1;
+    -unity-text-align: middle-right;
+    font-size: 25px;
+}
+
+.StopButton {
+    font-size: 25px;
+    color: var(--onSecondary);
+    background-color: var(--secondary);
+}
+
+.GameOverContainer {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    rotate: 30deg;
+}
+
+.WinContainer {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    position: absolute;
+    rotate: -30deg;
+}
+
+.GameOver {
+    color: red;
+    font-size: 100px;
+    -unity-font-style: bold;
+}
+
+.Win {
+    color: rgb(0, 255, 0);
+    font-size: 100px;
+    -unity-font-style: bold;
+}
+
+.Description {
+    color: var(--onSurface);
+    font-size: 40px;
+}
