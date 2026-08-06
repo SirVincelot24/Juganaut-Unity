@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 261009909929712831}
   - component: {fileID: 908408940443637217}
   - component: {fileID: 3769822120862525807}
+   - component: {fileID: 6488889567148521681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4774426c4d9e12a897c4fb1a6f0ed2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  debugKey: {fileID: 4980555042151772804, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   diamondCount: 0
 --- !u!114 &3769822120862525807
 MonoBehaviour:
@@ -127,6 +129,21 @@ MonoBehaviour:
   menuState: 0
   settingsUI: {fileID: 882308566130347213}
   otherUI: {fileID: 0}
+--- !u!114 &6488889567148521681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354016656049576349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb86203b05a4165a9856db9f9c5a7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
+  audioMixer: {fileID: 24100000, guid: 4e06d8c65607d25b5b314d7367ebc9a9, type: 2}
+  musicVolume: 0
+  sfxVolume: 0
 --- !u!1 &6527443460475121765
 GameObject:
   m_ObjectHideFlags: 0
