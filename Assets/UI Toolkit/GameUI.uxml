@@ -22,12 +22,20 @@
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
-        <ui:VisualElement name="GameOverContainer" class="GameOverContainer">
-            <ui:Label text="Label" name="GameOver" class="GameOver"/>
+        <ui:VisualElement name="GameOverContainer" class="GameOverContainer" style="visibility: hidden;">
+            <ui:Label text="Label" name="GameOver" class="GameOver">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:94461abb50c028fd3b60aaf64bb83995" entry="Id(12687073280)"/>
+                </Bindings>
+            </ui:Label>
             <ui:Label text="Label" name="GameOverDesc" class="Description"/>
         </ui:VisualElement>
-        <ui:VisualElement name="WinContainer" class="WinContainer" style="flex-grow: 1;">
-            <ui:Label text="Label" name="Win" class="Win"/>
+        <ui:VisualElement name="WinContainer" class="WinContainer" style="flex-grow: 1; visibility: hidden;">
+            <ui:Label text="Label" name="Win" class="Win">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:94461abb50c028fd3b60aaf64bb83995" entry="Id(74011992064)"/>
+                </Bindings>
+            </ui:Label>
             <ui:Label text="Label" name="WinDesc" class="Description"/>
         </ui:VisualElement>
     </ui:VisualElement>

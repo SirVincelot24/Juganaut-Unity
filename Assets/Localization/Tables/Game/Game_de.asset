@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 839933845504
-    m_Localized: Alle {game.diamondCount} Diamanten gesammelt!
+    m_Localized: Alle {diamonds} Diamanten gesammelt!
     m_Metadata:
       m_Items:
       - rid: 1568451264882147332

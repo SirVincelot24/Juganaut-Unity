@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using logic;
+using UnityEngine;
+using UnityEngine.Localization;
 
 public static class EventBus
 {
@@ -30,6 +33,8 @@ public static class EventBus
     
     public static void Publish<TEvent>(TEvent eventItem) where TEvent : class
     {
+        
+        Debug.Log($"Publishing {typeof(TEvent).Name}");
         var eventType = typeof(TEvent);
 
         if (!EventSubscriptions.TryGetValue(eventType, out var handlers))
@@ -42,5 +47,24 @@ public static class EventBus
         {
             handler.Invoke(eventItem);
         }
+    }
+}
+
+public class GameOverEvent
+{
+    public readonly IGameOverReason Reason;
+
+    public GameOverEvent(IGameOverReason reason)
+    {
+        Reason = reason;
+    }
+}
+public class WinningEvent
+{
+    public readonly IWinningReason Reason;
+
+    public WinningEvent(IWinningReason reason)
+    {
+        Reason = reason;
     }
 }
