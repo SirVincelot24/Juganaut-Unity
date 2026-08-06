@@ -16,12 +16,14 @@ MonoBehaviour:
     m_Code: de
   m_SharedData: {fileID: 11400000, guid: 4d6fa0088101c2439a22a676cd7c9436, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1568451283134447748
   m_TableData:
   - m_Id: 266567689789440
     m_Localized: Diamanten
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1568451283134447748
   - m_Id: 266522001235968
     m_Localized: "H\xF6he"
     m_Metadata:
@@ -112,4 +114,10 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1568451283134447748
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 266567689789440

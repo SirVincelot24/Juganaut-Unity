@@ -48,6 +48,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 1568451264882147332
+  - m_Id: 294971663278080
+    m_Localized: 'Diamanten: {diamondCount} / {diamondsInGame}'
+    m_Metadata:
+      m_Items:
+      - rid: 1568451264882147332
   references:
     version: 2
     RefIds:
@@ -57,3 +62,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 839933845504
+        - id: 294971663278080

@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: win.all_diamonds
     m_Metadata:
       m_Items: []
+  - m_Id: 294971663278080
+    m_Key: diamondCount
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
