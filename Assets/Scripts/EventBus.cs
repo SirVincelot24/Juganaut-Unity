@@ -33,8 +33,6 @@ public static class EventBus
     
     public static void Publish<TEvent>(TEvent eventItem) where TEvent : class
     {
-        
-        Debug.Log($"Publishing {typeof(TEvent).Name}");
         var eventType = typeof(TEvent);
 
         if (!EventSubscriptions.TryGetValue(eventType, out var handlers))

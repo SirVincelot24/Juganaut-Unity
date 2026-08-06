@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public void GameOver(IGameOverReason reason)
     {
         EventBus.Publish(new GameOverEvent(reason));
-        Debug.Log($"Game Over Reason: {reason}");
         if (!IsRunning) return;
         GameOverReason = reason;
     }
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
     public void Win(IWinningReason reason)
     {
         EventBus.Publish(new WinningEvent(reason));
-        Debug.Log($"Winning Reason: {reason}");
         WinningReason = reason;
         GameOverReason = null;
         IsRunning = false;
@@ -36,7 +34,6 @@ public class GameManager : MonoBehaviour
     {
         if (debugKey.action.triggered)
         {
-            Win(new AllDiamondsCollected(3));
         }
     }
 }
