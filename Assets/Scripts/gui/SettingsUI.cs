@@ -11,6 +11,7 @@ namespace gui
         private UIDocument _uiDocument;
 
         private Button _backButton;
+        private Button _resetButton;
         
         private void Awake()
         {
@@ -19,14 +20,13 @@ namespace gui
             _uiDocument.rootVisualElement.visible = false;
             
             _backButton = _uiDocument.rootVisualElement.Q<Button>("Back");
+            _resetButton = _uiDocument.rootVisualElement.Q<Button>("Reset");
 
             _uiDocument.rootVisualElement.dataSource = settingsManager; 
             
-            _backButton.RegisterCallback<ClickEvent>(_ =>
-            {
-                Debug.Log("Back button clicked");
-                menuStateHandler.CloseSettingsMenu();
-            });
+            _backButton.RegisterCallback<ClickEvent>(_ => menuStateHandler.CloseSettingsMenu());
+
+            _resetButton.RegisterCallback<ClickEvent>(_ => settingsManager.ResetWorldSettings());
         }
     }
 }
