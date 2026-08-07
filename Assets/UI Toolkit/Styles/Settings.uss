@@ -4,6 +4,7 @@
 .TitleBar {
     flex-grow: 0;
     background-color: var(--primary);
+    flex-direction: row;
 }
 
 .Title {
@@ -37,12 +38,22 @@
 
 .SettingsContainer {
     flex-grow: 1;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: relative;
 }
 
 .SettingSubContainer {
+    flex-grow: 1;
 }
 
-.SettingsCategory {
+.SettingsCategoryTitle {
     font-size: 40px;
     -unity-text-align: middle-left;
     padding: 50px 0 20px;
@@ -54,7 +65,7 @@
     color: var(--onBackground);
 }
 
-.unity-base-slider__tracker{
+.unity-base-slider__tracker {
     background-color: var(--secondaryContainer);
     border-width: 0;
     border-radius: 5px;
@@ -62,13 +73,13 @@
     top: 22px;
 }
 
-.unity-base-slider__fill{
+.unity-base-slider__fill {
     background-color: var(--primary);
     border-width: 0;
     border-radius: 5px;
 }
 
-.unity-base-slider__dragger{
+.unity-base-slider__dragger {
     background-color: var(--primary);
     border-color: var(--surfaceContainer);
     border-radius: 5px;

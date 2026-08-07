@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Styles/Settings.uss?fileID=7433441132597879392&amp;guid=8cd85a7eaa863a8559e082bac4b625ac&amp;type=3#Settings"/>
     <ui:VisualElement name="Root" class="Background" style="flex-grow: 1;">
-        <ui:VisualElement name="TitleBar" class="TitleBar" style="flex-direction: row;">
+        <ui:VisualElement name="TitleBar" class="TitleBar">
             <ui:Button text="Button" name="Back" class="BackButton">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263511539539968)"/>
@@ -14,29 +14,29 @@
             </ui:Label>
         </ui:VisualElement>
         <ui:ScrollView name="SettingsContainer" class="SettingsContainer">
-            <ui:VisualElement name="General" class="SettingSubContainer" style="flex-grow: 1;">
-                <ui:Label text="Label" name="Title" class="SettingsCategory">
+            <ui:VisualElement name="General" class="SettingSubContainer">
+                <ui:Label text="Label" name="Title" class="SettingsCategory SettingsCategoryTitle">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(263577893429248)"/>
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="GameRenderer" class="SettingSubContainer" style="flex-grow: 1;">
-                <ui:Label text="Label" name="Title" class="SettingsCategory">
+            <ui:VisualElement name="GameRenderer" class="SettingSubContainer">
+                <ui:Label text="Label" name="Title" class="SettingsCategory SettingsCategoryTitle">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(264499583344640)"/>
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="World" class="SettingSubContainer" style="flex-grow: 1;">
-                <ui:Label text="Label" name="Title" class="SettingsCategory">
+            <ui:VisualElement name="World" class="SettingSubContainer">
+                <ui:Label text="Label" name="Title" class="SettingsCategory SettingsCategoryTitle">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(265153718607872)"/>
                     </Bindings>
                 </ui:Label>
             </ui:VisualElement>
-            <ui:VisualElement name="Audio" class="SettingSubContainer" style="flex-grow: 1;">
-                <ui:Label text="Label" name="Title" class="SettingsCategory">
+            <ui:VisualElement name="Audio" class="SettingSubContainer">
+                <ui:Label text="Label" name="Title" class="SettingsCategory SettingsCategoryTitle">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266816638509056)"/>
                     </Bindings>
