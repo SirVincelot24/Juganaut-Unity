@@ -10,6 +10,8 @@ namespace gui
     public class MenuStateHandler : MonoBehaviour
     {
         public InputActionReference pauseKey;
+        
+        public SettingsManager settingsManager;
     
         public MenuState menuState;
         
@@ -49,6 +51,7 @@ namespace gui
         {
             otherUI.rootVisualElement.visible = false;
             settingsUI.rootVisualElement.visible = true;
+            settingsManager.LoadSettings();
             menuState = MenuState.SettingsMenu;
         }
         
@@ -56,6 +59,7 @@ namespace gui
         {
             otherUI.rootVisualElement.visible = true;
             settingsUI.rootVisualElement.visible = false;
+            settingsManager.SaveSettings();
         }
         
         public void StartGame()
