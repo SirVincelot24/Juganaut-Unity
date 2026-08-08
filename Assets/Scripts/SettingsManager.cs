@@ -5,9 +5,8 @@ using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
 {
-    [Header("Objects")]
-    public AudioMixer audioMixer;
-    
+    [Header("Objects")] public AudioMixer audioMixer;
+
     [Header("Settings")]
     [CreateProperty]
     public float MasterVolume
@@ -15,10 +14,11 @@ public class SettingsManager : MonoBehaviour
         get => _floatSettings[Settings.MasterVolume];
         set
         {
-            _floatSettings[Settings.MasterVolume] = value; 
+            _floatSettings[Settings.MasterVolume] = value;
             SetMasterVolume(value);
         }
     }
+
     [CreateProperty]
     public float MusicVolume
     {
@@ -29,6 +29,7 @@ public class SettingsManager : MonoBehaviour
             SetMusicVolume(value);
         }
     }
+
     [CreateProperty]
     public float SfxVolume
     {
@@ -46,12 +47,14 @@ public class SettingsManager : MonoBehaviour
         get => _intSettings[Settings.Width];
         set => _intSettings[Settings.Width] = value;
     }
+
     [CreateProperty]
     public int Height
     {
         get => _intSettings[Settings.Height];
         set => _intSettings[Settings.Height] = value;
     }
+
     [CreateProperty]
     public Vector2 Diamonds
     {
@@ -62,6 +65,7 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.DiamondsMax] = (int)value.y;
         }
     }
+
     [CreateProperty]
     public Vector2 Monster
     {
@@ -72,6 +76,7 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.MonsterMax] = (int)value.y;
         }
     }
+
     [CreateProperty]
     public Vector2 Bombs
     {
@@ -82,6 +87,7 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.BombsMax] = (int)value.y;
         }
     }
+
     [CreateProperty]
     public Vector2 Rocks
     {
@@ -96,15 +102,19 @@ public class SettingsManager : MonoBehaviour
     private readonly Dictionary<string, float> _floatSettings = new(StandardSettings.FloatSettings);
 
     private readonly Dictionary<string, int> _intSettings = new(StandardSettings.IntSettings);
-    
+
     public void ResetWorldSettings()
     {
         Width = StandardSettings.IntSettings[Settings.Width];
         Height = StandardSettings.IntSettings[Settings.Height];
-        Diamonds = new Vector2(StandardSettings.IntSettings[Settings.DiamondsMin], StandardSettings.IntSettings[Settings.DiamondsMax]);
-        Monster = new Vector2(StandardSettings.IntSettings[Settings.MonsterMin], StandardSettings.IntSettings[Settings.MonsterMax]);
-        Bombs = new Vector2(StandardSettings.IntSettings[Settings.BombsMin], StandardSettings.IntSettings[Settings.BombsMax]);
-        Rocks = new Vector2(StandardSettings.IntSettings[Settings.RocksMin], StandardSettings.IntSettings[Settings.RocksMax]);
+        Diamonds = new Vector2(StandardSettings.IntSettings[Settings.DiamondsMin],
+            StandardSettings.IntSettings[Settings.DiamondsMax]);
+        Monster = new Vector2(StandardSettings.IntSettings[Settings.MonsterMin],
+            StandardSettings.IntSettings[Settings.MonsterMax]);
+        Bombs = new Vector2(StandardSettings.IntSettings[Settings.BombsMin],
+            StandardSettings.IntSettings[Settings.BombsMax]);
+        Rocks = new Vector2(StandardSettings.IntSettings[Settings.RocksMin],
+            StandardSettings.IntSettings[Settings.RocksMax]);
     }
 
     private void SetMasterVolume(float value)
@@ -121,7 +131,7 @@ public class SettingsManager : MonoBehaviour
     {
         audioMixer.SetFloat("SfxVolume", Mathf.Log10(value) * 20);
     }
-    
+
     private void Start()
     {
         LoadSettings();
@@ -129,52 +139,124 @@ public class SettingsManager : MonoBehaviour
 
     public void LoadSettings()
     {
-        //TODO: apply the settings to the actual variables to set them instead of setting them in the dict and not updating the settings
         foreach (var key in new List<string>(_floatSettings.Keys))
         {
-            _floatSettings[key] = PlayerPrefs.GetFloat(key, _floatSettings[key]);
+            ApplySetting(key, GetFloatSetting(key));
         }
-        
+
         foreach (var key in new List<string>(_intSettings.Keys))
         {
-            _intSettings[key] = PlayerPrefs.GetInt(key, _intSettings[key]);
+            ApplySetting(key, GetIntSetting(key));
         }
     }
-    
+
     public void SaveSettings()
     {
         foreach (var key in _floatSettings.Keys)
         {
             PlayerPrefs.SetFloat(key, _floatSettings[key]);
         }
+
         foreach (var key in _intSettings.Keys)
         {
             PlayerPrefs.SetInt(key, _intSettings[key]);
         }
+
         PlayerPrefs.Save();
     }
-    
+
+    private int GetIntSetting(string key)
+    {
+        return !_intSettings.TryGetValue(key, out var setting)
+            ? throw new KeyNotFoundException(key)
+            : PlayerPrefs.GetInt(key, setting);
+    }
+
+    private float GetFloatSetting(string key)
+    {
+        return !_floatSettings.TryGetValue(key, out var setting)
+            ? throw new KeyNotFoundException(key)
+            : PlayerPrefs.GetFloat(key, setting);
+    }
+
+    private void ApplySetting<T>(string key, T value)
+    {
+        switch (value)
+        {
+            case float floatValue:
+                switch (key)
+                {
+                    case Settings.MasterVolume:
+                        MasterVolume = floatValue;
+                        break;
+                    case Settings.MusicVolume:
+                        MusicVolume = floatValue;
+                        break;
+                    case Settings.SfxVolume:
+                        SfxVolume = floatValue;
+                        break;
+                }
+
+                break;
+            case int intValue:
+                switch (key)
+                {
+                    case Settings.Width:
+                        Width = intValue;
+                        break;
+                    case Settings.Height:
+                        Height = intValue;
+                        break;
+                    case Settings.DiamondsMin:
+                    case Settings.DiamondsMax:
+                        Diamonds = new Vector2(
+                            GetIntSetting(Settings.DiamondsMin),
+                            GetIntSetting(Settings.DiamondsMax));
+                        break;
+                    case Settings.MonsterMin:
+                    case Settings.MonsterMax:
+                        Monster = new Vector2(
+                            GetIntSetting(Settings.MonsterMin),
+                            GetIntSetting(Settings.MonsterMax));
+                        break;
+                    case Settings.BombsMin:
+                    case Settings.BombsMax:
+                        Bombs = new Vector2(
+                            GetIntSetting(Settings.BombsMin),
+                            GetIntSetting(Settings.BombsMax));
+                        break;
+                    case Settings.RocksMin:
+                    case Settings.RocksMax:
+                        Rocks = new Vector2(
+                            GetIntSetting(Settings.RocksMin),
+                            GetIntSetting(Settings.RocksMax));
+                        break;
+                }
+
+                break;
+        }
+    }
 }
 
-    internal static class Settings
-    {
-        public const string
-            MasterVolume = "MasterVolume",
-            MusicVolume = "MusicVolume",
-            SfxVolume = "SFXVolume",
-            
-            Width = "Width",
-            Height = "Height",
-            DiamondsMin = "DiamondsMin",
-            DiamondsMax = "DiamondsMax",
-            MonsterMin = "MonsterMin",
-            MonsterMax = "MonsterMax",
-            BombsMin = "BombsMin",
-            BombsMax = "BombsMax",
-            RocksMin = "RocksMin",
-            RocksMax = "RocksMax"
-            ;
-    }
+internal static class Settings
+{
+    public const string
+        MasterVolume = "MasterVolume",
+        MusicVolume = "MusicVolume",
+        SfxVolume = "SFXVolume",
+        
+        Width = "Width",
+        Height = "Height",
+        DiamondsMin = "DiamondsMin",
+        DiamondsMax = "DiamondsMax",
+        MonsterMin = "MonsterMin",
+        MonsterMax = "MonsterMax",
+        BombsMin = "BombsMin",
+        BombsMax = "BombsMax",
+        RocksMin = "RocksMin",
+        RocksMax = "RocksMax"
+        ;
+}
 internal static class StandardSettings
 {
     public static readonly Dictionary<string, float> FloatSettings = new()
