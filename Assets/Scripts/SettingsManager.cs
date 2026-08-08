@@ -129,6 +129,11 @@ public class SettingsManager : MonoBehaviour
         LoadSettings();
     }
 
+    private void Start()
+    {
+        LoadSettings();
+    }
+
     public void LoadSettings()
     {
         foreach (var key in new List<string>(_floatSettings.Keys))
