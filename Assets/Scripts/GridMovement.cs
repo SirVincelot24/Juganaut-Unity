@@ -25,6 +25,19 @@ public class GridMovement : MonoBehaviour
         if (!_gameManager.World.IsValid(destination)) return;
         StartCoroutine(Move(movementDirection));
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        switch (collision.gameObject.name)
+        {
+            case "Diamond":
+                Destroy(collision.gameObject);
+                _gameManager.World.SetField(Coord, WorldItemType.Empty);
+                CollectDiamond();
+                break;
+        }
+    }
 
     private void Awake()
     {
