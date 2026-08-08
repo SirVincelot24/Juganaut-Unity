@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   debugKey: {fileID: 4980555042151772804, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  settingsManager: {fileID: 6488889567148521681}
   diamondCount: 0
 --- !u!114 &3769822120862525807
 MonoBehaviour:
