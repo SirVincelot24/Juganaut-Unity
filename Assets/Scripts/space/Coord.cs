@@ -1,5 +1,5 @@
 using System;
-using System.Diagnostics;
+using UnityEngine;
 
 namespace space
 {
@@ -18,6 +18,11 @@ namespace space
                 Direction.Right => new Coord(X + 1, Y),
                 _ => throw new ArgumentException("Invalid direction")
             };
+        }
+        
+        public Vector2 ToVector2(float scale)
+        {
+            return  new Vector2(X * scale, Y * scale);
         }
     }
 }
