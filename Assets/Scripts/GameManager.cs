@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             settingsManager.Monster,
             settingsManager.Bombs,
             settingsManager.Rocks,
-            new Coord(settingsManager.Width / 2, settingsManager.Height / 2)
+            new Coord(Mathf.FloorToInt(settingsManager.Width / 2), Mathf.FloorToInt(settingsManager.Height / 2))
             );
         World.SpawnItems(0.5f);
         
