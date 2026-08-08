@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
         WinningReason = reason;
         GameOverReason = null;
         IsRunning = false;
+        soundManager.StopMusic();
+        soundManager.PlaySfx(SfxType.WinGame);
     }
 
     private void Update()
