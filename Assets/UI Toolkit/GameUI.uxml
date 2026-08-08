@@ -9,10 +9,7 @@
             </ui:Button>
             <ui:Label text="Label" name="DiamondLabel" class="DiamondLabel">
                 <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:94461abb50c028fd3b60aaf64bb83995" entry="Id(294971663278080)">
-                        <variables>
-                        </variables>
-                    </UnityEngine.Localization.LocalizedString>
+                    
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
