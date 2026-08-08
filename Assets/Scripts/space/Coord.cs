@@ -22,7 +22,7 @@ namespace space
         
         public Vector2 ToVector2(float scale)
         {
-            return  new Vector2(X * scale, Y * scale);
+              return new Vector2(X * scale, Y * scale);
         }
     }
 }
