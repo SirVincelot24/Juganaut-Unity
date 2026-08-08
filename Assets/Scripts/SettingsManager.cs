@@ -18,7 +18,6 @@ public class SettingsManager : MonoBehaviour
             SetMasterVolume(value);
         }
     }
-
     [CreateProperty]
     public float MusicVolume
     {
@@ -29,7 +28,6 @@ public class SettingsManager : MonoBehaviour
             SetMusicVolume(value);
         }
     }
-
     [CreateProperty]
     public float SfxVolume
     {
@@ -40,21 +38,18 @@ public class SettingsManager : MonoBehaviour
             SetSfxVolume(value);
         }
     }
-
     [CreateProperty]
     public int Width
     {
         get => _intSettings[Settings.Width];
         set => _intSettings[Settings.Width] = value;
     }
-
     [CreateProperty]
     public int Height
     {
         get => _intSettings[Settings.Height];
         set => _intSettings[Settings.Height] = value;
     }
-
     [CreateProperty]
     public Vector2 Diamonds
     {
@@ -65,7 +60,6 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.DiamondsMax] = (int)value.y;
         }
     }
-
     [CreateProperty]
     public Vector2 Monster
     {
@@ -76,7 +70,6 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.MonsterMax] = (int)value.y;
         }
     }
-
     [CreateProperty]
     public Vector2 Bombs
     {
@@ -87,7 +80,6 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.BombsMax] = (int)value.y;
         }
     }
-
     [CreateProperty]
     public Vector2 Rocks
     {
@@ -98,7 +90,7 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.RocksMax] = (int)value.y;
         }
     }
-
+    
     private readonly Dictionary<string, float> _floatSettings = new(StandardSettings.FloatSettings);
 
     private readonly Dictionary<string, int> _intSettings = new(StandardSettings.IntSettings);
