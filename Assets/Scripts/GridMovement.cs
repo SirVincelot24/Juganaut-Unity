@@ -17,6 +17,7 @@ public class GridMovement : MonoBehaviour
     private bool _isMoving = false;
     private void Update()
     {
+        if (!_gameManager.IsRunning) return;
         if (_isMoving) return;
         if ((!movementKeys.action.triggered || isRepeatedMovement) &&
             (!movementKeys.action.IsPressed() || !isRepeatedMovement)) return;
