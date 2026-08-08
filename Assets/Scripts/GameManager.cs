@@ -1,9 +1,11 @@
+using System.Linq;
 using JetBrains.Annotations;
 using logic;
 using setup;
 using space;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,8 +40,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Game")
+            return;
+        
         World = WorldBuilder.CreateWorld(
             settingsManager.Width, settingsManager.Height,
             settingsManager.Diamonds,

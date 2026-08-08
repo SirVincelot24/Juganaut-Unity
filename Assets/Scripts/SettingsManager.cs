@@ -124,7 +124,7 @@ public class SettingsManager : MonoBehaviour
         audioMixer.SetFloat("SfxVolume", Mathf.Log10(value) * 20);
     }
 
-    private void Start()
+    private void Awake()
     {
         LoadSettings();
     }
