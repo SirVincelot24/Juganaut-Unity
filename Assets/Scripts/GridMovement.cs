@@ -29,7 +29,7 @@ public class GridMovement : MonoBehaviour
         StartCoroutine(Move(movementDirection));
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
         switch (collision.gameObject.name)
