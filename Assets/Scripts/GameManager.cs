@@ -5,7 +5,9 @@ using setup;
 using space;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.SceneManagement;
+using WorldItems;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +18,8 @@ public class GameManager : MonoBehaviour
     public SettingsManager settingsManager;
     public World World;
     public bool IsRunning { get; private set; }
-    public int diamondCount;
+    public IntVariable diamondCount;
+    public IntVariable diamondsInGame;
 
     public void GameOver(IGameOverReason reason)
     {
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
             settingsManager.Rocks,
             new Coord(Mathf.FloorToInt(settingsManager.Width / 2), Mathf.FloorToInt(settingsManager.Height / 2))
             );
+        diamondsInGame.Value = World.Count(type => type == WorldItemType.Diamond);
         World.SpawnItems(0.5f);
         
     }

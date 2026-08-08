@@ -15,6 +15,7 @@ namespace gui
         private UIDocument _uiDocument;
         
         private Button _stopButton;
+        private Label _diamondLabel;
         private VisualElement _gameOverContainer;
         private VisualElement _winningContainer;
         private Label _gameOverDesc;
@@ -24,6 +25,7 @@ namespace gui
             _uiDocument = GetComponent<UIDocument>();
             
             _stopButton = _uiDocument.rootVisualElement.Q<Button>("Stop");
+            _diamondLabel = _uiDocument.rootVisualElement.Q<Label>("DiamondLabel");
             _gameOverContainer = _uiDocument.rootVisualElement.Q<VisualElement>("GameOverContainer");
             _winningContainer = _uiDocument.rootVisualElement.Q<VisualElement>("WinContainer");
             _gameOverDesc = _uiDocument.rootVisualElement.Q<Label>("GameOverDesc");
@@ -31,8 +33,15 @@ namespace gui
             
             _stopButton.RegisterCallback<ClickEvent>(_ => SceneChanger.ChangeSceneNow("MainMenu"));
 
+            _diamondLabel.dataSourceType = typeof(LocalizedString);
             _gameOverDesc.dataSourceType = typeof(LocalizedString);
             _winDesc.dataSourceType = typeof(LocalizedString);
+            _uiDocument.rootVisualElement.dataSource = gameManager;
+
+            var diamondLabelText = new LocalizedString("Game", "diamondCount");
+            diamondLabelText.Add("diamondCount", gameManager.diamondCount);
+            diamondLabelText.Add("diamondsInGame", gameManager.diamondsInGame);
+            _diamondLabel.SetBinding("text", diamondLabelText);
         }
         
         private void OnEnable()

@@ -93,4 +93,15 @@ public class World
             }
         }
     }
+
+    public int Count(Func<WorldItemType, bool> condition)
+    {
+        var result = 0;
+        _foreachCoord(coord =>
+        {
+            if (!condition(GetField(coord))) return;
+            result++;
+        });
+        return result;
+    }
 }
