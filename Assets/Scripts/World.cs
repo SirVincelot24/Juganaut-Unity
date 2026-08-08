@@ -28,7 +28,7 @@ public class World
         ValidYRange = Enumerable.Range(0, Height);
     }
     
-    public void SpawnItems()
+    public void SpawnItems(float gridSize)
     {
         var worldItemList = Resources.LoadAll<WorldItem>("Scriptable Objects");
         for (var row = 0; row < Height; row++)

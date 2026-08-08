@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             settingsManager.Rocks,
             new Coord(settingsManager.Width / 2, settingsManager.Height / 2)
             );
-        World.SpawnItems();
+        World.SpawnItems(0.5f);
+        
     }
 }
