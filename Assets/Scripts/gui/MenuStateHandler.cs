@@ -33,10 +33,11 @@ namespace gui
                     break;
                 case MenuState.Game:
                     // open pause menu
+                    OpenSettingsMenu();
                     break;
                 case MenuState.SettingsMenu:
                     CloseSettingsMenu();
-                    menuState = SceneManager.GetActiveScene().name == "MainMenu" ? MenuState.MainMenu : MenuState.PauseMenu;
+                    menuState = SceneManager.GetActiveScene().name == "MainMenu" ? MenuState.MainMenu : MenuState.Game;
                     break;
                 case MenuState.PauseMenu:
                     // Resume
