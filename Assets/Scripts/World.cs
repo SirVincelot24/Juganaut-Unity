@@ -31,9 +31,14 @@ public class World
     public void SpawnItems()
     {
         var worldItemList = Resources.LoadAll<WorldItem>("Scriptable Objects");
-        foreach (var item in _fields.SelectMany(row => row))
+        for (var row = 0; row < Height; row++)
         {
-            Object.Instantiate(worldItemList.FirstOrDefault(i => i.type == item)?.prefab, new Vector3(1, 1),  Quaternion.identity);
+            for (var col = 0; col < Width; col++)
+            {
+                var item = _fields[row][col];
+                Object.Instantiate(worldItemList.FirstOrDefault(i => i.type == item)?.prefab, new Vector3(row, col) * gridSize,
+                    Quaternion.identity);
+            }
         }
     }
 
