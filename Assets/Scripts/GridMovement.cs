@@ -2,6 +2,7 @@ using System.Collections;
 using space;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WorldItems;
 
 public class GridMovement : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class GridMovement : MonoBehaviour
     [SerializeField] private float moveDuration = 0.1f;
 
     public InputActionReference movementKeys;
-    public GameManager gameManager;
-    public Coord Coord = new(10, 10);
+    private GameManager _gameManager;
+    public Coord Coord;
 
     private bool _isMoving = false;
     private void Update()
@@ -21,18 +22,28 @@ public class GridMovement : MonoBehaviour
             (!movementKeys.action.IsPressed() || !isRepeatedMovement)) return;
         var movementDirection = DirectionExtensions.DirectionFromVector(movementKeys.action.ReadValue<Vector2>());
         var destination = Coord.Move(movementDirection);
-        if (!gameManager.World.IsValid(destination)) return;
+        if (!_gameManager.World.IsValid(destination)) return;
         StartCoroutine(Move(movementDirection));
     }
-    
-    
+
+    private void Awake()
+    {
+        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        Coord = _gameManager.World.Find(type => type == WorldItemType.Player);
+    }
+
+    private void MovePlayer(Coord source, Coord destination)
+    {
+        _gameManager.World.SetField(source, WorldItemType.Empty);
+        _gameManager.World.SetField(destination, WorldItemType.Player);
+    }
 
     private IEnumerator Move(Direction direction)
     {
         _isMoving = true;
         
         Vector2 startPos = transform.position;
-        var endPos = startPos + (DirectionExtensions.DirectionToVector(direction) * gridSize);
+        var endPos = startPos + DirectionExtensions.DirectionToVector(direction) * gridSize;
         
         float elapsedTime = 0;
         while (elapsedTime < moveDuration)
@@ -44,7 +55,9 @@ public class GridMovement : MonoBehaviour
             yield return null;
         }
         transform.position = endPos;
+        _gameManager.World.SetField(Coord, WorldItemType.Empty);
         Coord = Coord.Move(direction);
+        _gameManager.World.SetField(Coord, WorldItemType.Player);
         _isMoving = false;
     }
 }
