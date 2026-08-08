@@ -1,4 +1,5 @@
 using System.Collections;
+using logic;
 using space;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ public class GridMovement : MonoBehaviour
 
     public InputActionReference movementKeys;
     private GameManager _gameManager;
+    private SoundManager _soundManager;
     public Coord Coord;
 
     private bool _isMoving = false;
@@ -42,7 +44,9 @@ public class GridMovement : MonoBehaviour
 
     private void Awake()
     {
-        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        var gameManagerObj = GameObject.FindWithTag("GameManager");
+        _gameManager = gameManagerObj.GetComponent<GameManager>();
+        _soundManager = gameManagerObj.GetComponent<SoundManager>();
         Coord = _gameManager.World.Find(type => type == WorldItemType.Player);
     }
 
@@ -50,6 +54,16 @@ public class GridMovement : MonoBehaviour
     {
         _gameManager.World.SetField(source, WorldItemType.Empty);
         _gameManager.World.SetField(destination, WorldItemType.Player);
+    }
+    
+    private void CollectDiamond()
+    {
+        _gameManager.diamondCount.Value++;
+        if (_gameManager.diamondCount.Value >= _gameManager.diamondsInGame.Value)
+        {
+            _gameManager.Win(new AllDiamondsCollected(_gameManager.diamondCount.Value));
+        }
+        _soundManager.PlaySfx(SfxType.CollectDiamond);
     }
 
     private IEnumerator Move(Direction direction)
@@ -71,6 +85,10 @@ public class GridMovement : MonoBehaviour
         transform.position = endPos;
         _gameManager.World.SetField(Coord, WorldItemType.Empty);
         Coord = Coord.Move(direction);
+        if (_gameManager.World.GetField(Coord) == WorldItemType.Diamond)
+        {
+            CollectDiamond();
+        }
         _gameManager.World.SetField(Coord, WorldItemType.Player);
         _isMoving = false;
     }

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public InputActionReference debugKey;
     public SettingsManager settingsManager;
+    public SoundManager soundManager;
     public World World;
     public bool IsRunning { get; private set; } = true;
     public IntVariable diamondCount;
