@@ -25,4 +25,5 @@ public enum SfxType
     Win = 1,
     GameOver = 2,
     Crisp = 3,
+    BombExplode = 4,
 }

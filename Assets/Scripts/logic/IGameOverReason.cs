@@ -4,8 +4,8 @@ namespace logic
 {
     public interface IGameOverReason{}
 
-    public class RockHitsPlayer : IGameOverReason {}
-    public class PlayerWalksIntoMonster : IGameOverReason {}
-    public class MonsterCatchesPlayer : IGameOverReason {}
-    public class Explosion : IGameOverReason {}
+    public class RockHitsPlayerReason : IGameOverReason {}
+    public class PlayerWalksIntoMonsterReason : IGameOverReason {}
+    public class MonsterCatchesPlayerReason : IGameOverReason {}
+    public class ExplosionReason : IGameOverReason {}
 }

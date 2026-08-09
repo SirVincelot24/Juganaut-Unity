@@ -88,10 +88,10 @@ namespace gui
         {
             return new LocalizedString("Game", reason switch
             {
-                RockHitsPlayer =>  "death.rock_hits_player",
-                PlayerWalksIntoMonster => "death.player_walks_into_monster",
-                MonsterCatchesPlayer => "death.monster_catches_player",
-                Explosion => "death.explosion",
+                RockHitsPlayerReason =>  "death.rock_hits_player",
+                PlayerWalksIntoMonsterReason => "death.player_walks_into_monster",
+                MonsterCatchesPlayerReason => "death.monster_catches_player",
+                ExplosionReason => "death.explosion",
                 _ => throw new ArgumentOutOfRangeException(nameof(reason), reason, null)
             });
         }

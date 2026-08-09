@@ -27,14 +27,8 @@ namespace setup
             CreateItems(world, diamondCountRange, playerCoord, () => WorldItemType.Diamond);
 
             world.SetField(playerCoord, WorldItemType.Player);
-            List<Coord> nextToPlayer = new()
-            {
-                playerCoord.Move(Direction.Up),
-                playerCoord.Move(Direction.Down),
-                playerCoord.Move(Direction.Right),
-                playerCoord.Move(Direction.Left),
-            };
-            foreach (var coord in nextToPlayer)
+            
+            foreach (var coord in playerCoord.Neighbors())
             {
                 switch (world.GetField(coord))
                 {

@@ -40,7 +40,7 @@ public class GridMovement : MonoBehaviour
                 break;
             case "Monster":
                 Destroy(gameObject);
-                _gameManager.GameOver(new PlayerWalksIntoMonster());
+                _gameManager.GameOver(new PlayerWalksIntoMonsterReason());
                 break;
             case "Dirt":
                 Destroy(collision.gameObject);
