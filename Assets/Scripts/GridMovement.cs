@@ -42,6 +42,10 @@ public class GridMovement : MonoBehaviour
                 Destroy(gameObject);
                 _gameManager.GameOver(new PlayerWalksIntoMonster());
                 break;
+            case "Dirt":
+                Destroy(collision.gameObject);
+                _soundManager.PlaySfx(SfxType.Crisp);
+                break;
         }
     }
 

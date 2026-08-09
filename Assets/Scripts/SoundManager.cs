@@ -23,5 +23,6 @@ public enum SfxType
 {
     CollectDiamond = 0,
     Win = 1,
-    GameOver = 2
+    GameOver = 2,
+    Crisp = 3,
 }
