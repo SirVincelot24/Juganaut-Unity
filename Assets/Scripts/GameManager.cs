@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         EventBus.Publish(new GameOverEvent(reason));
         if (!IsRunning) return;
         GameOverReason = reason;
+        soundManager.StopMusic();
+        soundManager.PlaySfx(SfxType.GameOver);
     }
 
     public void Win(IWinningReason reason)
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
         GameOverReason = null;
         IsRunning = false;
         soundManager.StopMusic();
-        soundManager.PlaySfx(SfxType.WinGame);
+        soundManager.PlaySfx(SfxType.Win);
     }
 
     private void Update()

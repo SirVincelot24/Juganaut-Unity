@@ -1,28 +1,16 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
     [Header("SFX")]
-    public AudioSource collectDiamond;
-    public AudioSource winGame;
+    public List<AudioSource> sfxList;
     [Header("Music")]
     public AudioSource music;
 
     public void PlaySfx(SfxType type)
     {
-        switch (type)
-        {
-            case SfxType.CollectDiamond:
-                collectDiamond.Play();
-                break;
-            case SfxType.WinGame:
-                winGame.Play();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(type), type, null);
-            
-        }
+        sfxList[(int)type].Play();
     }
 
     public void StopMusic()
@@ -33,6 +21,7 @@ public class SoundManager : MonoBehaviour
 
 public enum SfxType
 {
-    CollectDiamond,
-    WinGame
+    CollectDiamond = 0,
+    Win = 1,
+    GameOver = 2
 }
