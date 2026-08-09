@@ -34,7 +34,7 @@
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(265153718607872)"/>
                     </Bindings>
                 </ui:Label>
-                <ui:Button text="" name="Reset" icon-image="project://database/Assets/Textures/reset_settings.svg?fileID=7388822144124034973&amp;guid=9a7206352e66dd7ecad328e52e10a2eb&amp;type=3#reset_settings" class="ResetIcon Reset"/>
+                <ui:Button text="" name="Reset" icon-image="project://database/Assets/Resources/Textures/reset_settings.svg?fileID=7388822144124034973&amp;guid=9a7206352e66dd7ecad328e52e10a2eb&amp;type=3#reset_settings" __unity-builder-selected-element="selected" class="ResetIcon Reset"/>
                 <ui:SliderInt label="SliderInt" value="20" high-value="50" name="Width" fill="true" low-value="5" class="Slider">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266452975575040)"/>

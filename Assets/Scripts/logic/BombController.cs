@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using space;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,22 +17,40 @@ namespace logic
         private SoundManager _soundManager;
         private BoxCollider2D _collider;
         private BoxCollider2D _explosionCollider;
+        private SpriteRenderer _spriteRenderer;
+        private Sprite _bombActive;
 
         private void Awake()
         {
+            countdown = 3;
             active = true;
             _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
             _soundManager = _gameManager.GetComponent<SoundManager>();
             _collider = GetComponent<BoxCollider2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _bombActive = Resources.Load<Sprite>("Textures/bombe-active");
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player") && active)
+            if (!other.CompareTag("Player") || !active) return;
+            _spriteRenderer.sprite = _bombActive;
+            Tick();
+        }
+
+        private IEnumerator CountDown()
+        {
+            while (countdown > 0)
             {
-                Explode();
+                countdown--;
+                yield return new WaitForSeconds(0.5f);
             }
-            
+            Explode();
+        }
+
+        private void Tick()
+        {
+            StartCoroutine(CountDown());
         }
 
         private void OnTriggerStay2D(Collider2D other)
@@ -39,30 +58,33 @@ namespace logic
             if (active) return;
             switch (other.tag)
             {
+                case "Bomb":
+                    other.gameObject.GetComponent<BombController>().Tick();
+                    break;
                 case "Player":
                     _gameManager.GameOver(new ExplosionReason());
+                    Destroy(other.gameObject);
                     break;
-                case "Bomb":
-                    other.gameObject.GetComponent<BombController>().Explode();
+                default:
+                    Destroy(other.gameObject);
                     break;
             }
-            Destroy(other.gameObject);
             countdown--;
         }
 
-        public void Explode()
+        private void Explode()
         {
             active = false;
             // Coordinate approach
-            var fieldsToExplode = coord.NeighborsWithDiagonal();
-            fieldsToExplode.Add(coord);
-            foreach (var field in fieldsToExplode)
-            {
-                if (_gameManager.World.IsValid(field))
-                {
-                    
-                }
-            }
+            // var fieldsToExplode = coord.NeighborsWithDiagonal();
+            // fieldsToExplode.Add(coord);
+            // foreach (var field in fieldsToExplode)
+            // {
+            //     if (_gameManager.World.IsValid(field))
+            //     {
+            //         
+            //     }
+            // }
             // Collider approach
             _explosionCollider = this.AddComponent<BoxCollider2D>();
             _explosionCollider.size = new Vector2(15f, 15f);
