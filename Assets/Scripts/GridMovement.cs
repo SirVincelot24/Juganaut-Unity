@@ -31,13 +31,16 @@ public class GridMovement : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        switch (collision.gameObject.name)
+        switch (collision.gameObject.tag)
         {
             case "Diamond":
                 Destroy(collision.gameObject);
                 _gameManager.World.SetField(Coord, WorldItemType.Empty);
                 CollectDiamond();
+                break;
+            case "Monster":
+                Destroy(gameObject);
+                _gameManager.GameOver(new PlayerWalksIntoMonster());
                 break;
         }
     }
@@ -85,10 +88,6 @@ public class GridMovement : MonoBehaviour
         transform.position = endPos;
         _gameManager.World.SetField(Coord, WorldItemType.Empty);
         Coord = Coord.Move(direction);
-        if (_gameManager.World.GetField(Coord) == WorldItemType.Diamond)
-        {
-            CollectDiamond();
-        }
         _gameManager.World.SetField(Coord, WorldItemType.Player);
         _isMoving = false;
     }
