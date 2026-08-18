@@ -1,2 +1,3 @@
 @import url("unity-theme://default");
-@import url("DarkTheme.uss");
+@import url("../Styles/DarkTheme.uss");
+@import url("../Styles/Default.uss");

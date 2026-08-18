@@ -1,0 +1,52 @@
+:root {
+    --slider-tracker-height: 20px;
+    --slider-tracker-top: 26px;
+}
+
+.unity-base-slider__tracker,
+.unity-min-max-slider__tracker {
+    background-color: var(--secondaryContainer);
+    border-width: 0;
+    border-radius: 5px;
+    height: var(--slider-tracker-height);
+    top: var(--slider-tracker-top);
+}
+
+.unity-base-slider__fill,
+.unity-min-max-slider__dragger {
+    background-color: var(--primary);
+    border-width: 0;
+    border-radius: 5px;
+}
+
+.unity-min-max-slider__dragger {
+    height: var(--slider-tracker-height);
+    top: var(--slider-tracker-top);
+}
+
+.unity-base-slider__dragger,
+.unity-min-max-slider__min-thumb,
+.unity-min-max-slider__max-thumb {
+    background-color: var(--primary);
+    border-color: var(--surfaceContainer);
+    border-radius: 5px;
+    height: 40px;
+    width: 10px;
+}
+
+.unity-enum-field__input {
+    background-color: transparent;
+    border-color: var(--outline);
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.unity-enum-field__input:focus {
+    border-color: var(--primary);
+    border-width: 3px;
+}
+
+.unity-enum-field__input:hover {
+    background-color: transparent;
+    -unity-background-image-tint-color: transparent;
+}
