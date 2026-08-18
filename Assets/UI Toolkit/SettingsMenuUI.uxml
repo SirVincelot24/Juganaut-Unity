@@ -20,6 +20,7 @@
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(263577893429248)"/>
                     </Bindings>
                 </ui:Label>
+                <ui:EnumField label="Theme" value="Center" type="Theme, Assembly-CSharp" name="Theme" class="Setting"/>
             </ui:VisualElement>
             <ui:VisualElement name="GameRenderer" class="SettingSubContainer">
                 <ui:Label text="Label" name="Title" class="SettingsCategory SettingsCategoryTitle">
@@ -34,38 +35,38 @@
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(265153718607872)"/>
                     </Bindings>
                 </ui:Label>
-                <ui:Button text="" name="Reset" icon-image="project://database/Assets/Resources/Textures/reset_settings.svg?fileID=7388822144124034973&amp;guid=9a7206352e66dd7ecad328e52e10a2eb&amp;type=3#reset_settings" __unity-builder-selected-element="selected" class="ResetIcon Reset"/>
-                <ui:SliderInt label="SliderInt" value="20" high-value="50" name="Width" fill="true" low-value="5" class="Slider">
+                <ui:Button text="" name="Reset" icon-image="project://database/Assets/Resources/Textures/reset_settings.svg?fileID=7388822144124034973&amp;guid=9a7206352e66dd7ecad328e52e10a2eb&amp;type=3#reset_settings" class="ResetIcon Reset"/>
+                <ui:SliderInt label="SliderInt" value="20" high-value="50" name="Width" fill="true" low-value="5" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266452975575040)"/>
                         <ui:DataBinding property="value" data-source-path="Width" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:SliderInt>
-                <ui:SliderInt label="SliderInt" value="20" high-value="50" name="Height" fill="true" low-value="5" class="Slider">
+                <ui:SliderInt label="SliderInt" value="20" high-value="50" name="Height" fill="true" low-value="5" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266522001235968)"/>
                         <ui:DataBinding property="value" data-source-path="Height" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:SliderInt>
-                <ui:MinMaxSlider label="Min/Max Slider" value="10,30" low-limit="1" high-limit="100" name="Diamonds" class="Slider">
+                <ui:MinMaxSlider label="Min/Max Slider" value="10,30" low-limit="1" high-limit="100" name="Diamonds" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266567689789440)"/>
                         <ui:DataBinding property="value" data-source-path="Diamonds" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:MinMaxSlider>
-                <ui:MinMaxSlider label="Min/Max Slider" value="20,50" low-limit="0" high-limit="100" name="Monster" class="Slider">
+                <ui:MinMaxSlider label="Min/Max Slider" value="20,50" low-limit="0" high-limit="100" name="Monster" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266651789778944)"/>
                         <ui:DataBinding property="value" data-source-path="Monster" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:MinMaxSlider>
-                <ui:MinMaxSlider label="Min/Max Slider" value="10,20" low-limit="0" high-limit="100" name="Bombs" class="Slider">
+                <ui:MinMaxSlider label="Min/Max Slider" value="10,20" low-limit="0" high-limit="100" name="Bombs" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266701202874368)"/>
                         <ui:DataBinding property="value" data-source-path="Bombs" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:MinMaxSlider>
-                <ui:MinMaxSlider label="Min/Max Slider" value="20,50" low-limit="0" high-limit="100" name="Rocks" class="Slider">
+                <ui:MinMaxSlider label="Min/Max Slider" value="20,50" low-limit="0" high-limit="100" name="Rocks" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266752771842048)"/>
                         <ui:DataBinding property="value" data-source-path="Rocks" binding-mode="TwoWay"/>
@@ -78,19 +79,19 @@
                         <UnityEngine.Localization.LocalizedString property="text" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266816638509056)"/>
                     </Bindings>
                 </ui:Label>
-                <ui:Slider label="Slider" value="0.5" high-value="1" name="MasterVol" low-value="0.0001" fill="true" class="Slider">
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="MasterVol" low-value="0.0001" fill="true" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267145476136960)"/>
                         <ui:DataBinding property="value" data-source-path="MasterVolume" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:Slider>
-                <ui:Slider label="Slider" value="0.5" high-value="1" name="MusicVol" low-value="0.0001" fill="true" class="Slider">
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="MusicVol" low-value="0.0001" fill="true" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(266878370275328)"/>
                         <ui:DataBinding property="value" data-source-path="MusicVolume" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:Slider>
-                <ui:Slider label="Slider" value="0.5" high-value="1" name="SfxVol" low-value="0.0001" fill="true" class="Slider">
+                <ui:Slider label="Slider" value="0.5" high-value="1" name="SfxVol" low-value="0.0001" fill="true" class="Slider Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(267014047621120)"/>
                         <ui:DataBinding property="value" data-source-path="SfxVolume" binding-mode="TwoWay"/>

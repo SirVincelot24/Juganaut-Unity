@@ -277,3 +277,9 @@ internal static class StandardSettings
         { Settings.RocksMax, 50 },
     };
 }
+
+public enum Theme
+{
+    Light,
+    Dark
+}
