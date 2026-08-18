@@ -60,3 +60,16 @@
     align-content: center;
     justify-content: center;
 }
+
+.Root {
+    flex-grow: 1;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.portrait {
+    background-image: resource("Textures/menu-background-phone");
+}
+
+.landscape {
+    background-image: resource("Textures/menu-background#menu-background");
+}
