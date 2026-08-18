@@ -1,6 +1,7 @@
 :root {
     --slider-tracker-height: 20px;
     --slider-tracker-top: 26px;
+    color: var(--onBackground);
 }
 
 .TitleBar {
@@ -56,7 +57,7 @@
     color: var(--onTertiaryContainer);
 }
 
-.Slider {
+.Setting {
     font-size: 30px;
     color: var(--onBackground);
 }
@@ -103,14 +104,8 @@
     border-bottom-width: 0;
     border-left-width: 0;
     background-color: rgba(0, 0, 0, 0);
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
     width: 35px;
     height: 35px;
 }
