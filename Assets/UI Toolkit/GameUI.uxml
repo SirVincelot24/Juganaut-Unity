@@ -2,32 +2,32 @@
     <Style src="project://database/Assets/UI%20Toolkit/Styles/Game.uss?fileID=7433441132597879392&amp;guid=d2f58f968903f3c80be2b4659254a375&amp;type=3#Game"/>
     <ui:VisualElement name="Root" style="flex-grow: 1;">
         <ui:VisualElement name="TitleBar" class="TitleBar" style="flex-grow: 0; flex-direction: row;">
-            <ui:Button text="Button" name="Stop" class="StopButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+            <ui:Button text="Stop" name="Stop" class="StopButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(713668517888)"/>
                 </Bindings>
             </ui:Button>
-            <ui:Label text="Label" name="DiamondLabel" class="DiamondLabel">
+            <ui:Label text="Diamonds" name="DiamondLabel" class="DiamondLabel">
                 <Bindings>
                     
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
         <ui:VisualElement name="GameOverContainer" class="GameOverContainer" style="visibility: hidden;">
-            <ui:Label text="Label" name="GameOver" class="GameOver">
+            <ui:Label text="Game Over" name="GameOver" class="GameOver">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:94461abb50c028fd3b60aaf64bb83995" entry="Id(12687073280)"/>
                 </Bindings>
             </ui:Label>
-            <ui:Label text="Label" name="GameOverDesc" class="Description"/>
+            <ui:Label text="desc" name="GameOverDesc" class="Description"/>
         </ui:VisualElement>
         <ui:VisualElement name="WinContainer" class="WinContainer" style="flex-grow: 1; visibility: hidden;">
-            <ui:Label text="Label" name="Win" class="Win">
+            <ui:Label text="Won Game" name="Win" class="Win">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:94461abb50c028fd3b60aaf64bb83995" entry="Id(74011992064)"/>
                 </Bindings>
             </ui:Label>
-            <ui:Label text="Label" name="WinDesc" class="Description"/>
+            <ui:Label text="desc" name="WinDesc" class="Description"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
