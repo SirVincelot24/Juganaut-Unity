@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Key: sfx_volume
     m_Metadata:
       m_Items: []
+  - m_Id: 4976798059552768
+    m_Key: theme
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

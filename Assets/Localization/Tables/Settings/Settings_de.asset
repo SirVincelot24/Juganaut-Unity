@@ -112,6 +112,10 @@ MonoBehaviour:
     m_Localized: "Gesamtlautst\xE4rke"
     m_Metadata:
       m_Items: []
+  - m_Id: 4976798059552768
+    m_Localized: Farbschema
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

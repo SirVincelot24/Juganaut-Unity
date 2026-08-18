@@ -110,6 +110,10 @@ MonoBehaviour:
     m_Localized: Master Volume
     m_Metadata:
       m_Items: []
+  - m_Id: 4976798059552768
+    m_Localized: Theme
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
