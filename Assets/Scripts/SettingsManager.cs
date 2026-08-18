@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.Properties;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.Audio;
 public class SettingsManager : MonoBehaviour
 {
     [Header("Objects")] public AudioMixer audioMixer;
+    
+    public Action<Theme> OnThemeChanged;
 
     [Header("Settings")]
     [CreateProperty]
@@ -90,23 +93,34 @@ public class SettingsManager : MonoBehaviour
             _intSettings[Settings.RocksMax] = (int)value.y;
         }
     }
-    
-    private readonly Dictionary<string, float> _floatSettings = new(StandardSettings.FloatSettings);
 
-    private readonly Dictionary<string, int> _intSettings = new(StandardSettings.IntSettings);
+    [CreateProperty]
+    public Theme UiTheme
+    {
+        get => (Theme)_intSettings[Settings.Theme];
+        set
+        {
+            _intSettings[Settings.Theme] = (int)value;
+            OnThemeChanged?.Invoke(value);
+        }
+    }
+
+    private readonly Dictionary<string, float> _floatSettings = new(DefaultSettings.FloatSettings);
+
+    private readonly Dictionary<string, int> _intSettings = new(DefaultSettings.IntSettings);
 
     public void ResetWorldSettings()
     {
-        Width = StandardSettings.IntSettings[Settings.Width];
-        Height = StandardSettings.IntSettings[Settings.Height];
-        Diamonds = new Vector2(StandardSettings.IntSettings[Settings.DiamondsMin],
-            StandardSettings.IntSettings[Settings.DiamondsMax]);
-        Monster = new Vector2(StandardSettings.IntSettings[Settings.MonsterMin],
-            StandardSettings.IntSettings[Settings.MonsterMax]);
-        Bombs = new Vector2(StandardSettings.IntSettings[Settings.BombsMin],
-            StandardSettings.IntSettings[Settings.BombsMax]);
-        Rocks = new Vector2(StandardSettings.IntSettings[Settings.RocksMin],
-            StandardSettings.IntSettings[Settings.RocksMax]);
+        Width = DefaultSettings.IntSettings[Settings.Width];
+        Height = DefaultSettings.IntSettings[Settings.Height];
+        Diamonds = new Vector2(DefaultSettings.IntSettings[Settings.DiamondsMin],
+            DefaultSettings.IntSettings[Settings.DiamondsMax]);
+        Monster = new Vector2(DefaultSettings.IntSettings[Settings.MonsterMin],
+            DefaultSettings.IntSettings[Settings.MonsterMax]);
+        Bombs = new Vector2(DefaultSettings.IntSettings[Settings.BombsMin],
+            DefaultSettings.IntSettings[Settings.BombsMax]);
+        Rocks = new Vector2(DefaultSettings.IntSettings[Settings.RocksMin],
+            DefaultSettings.IntSettings[Settings.RocksMax]);
     }
 
     private void SetMasterVolume(float value)
@@ -228,6 +242,11 @@ public class SettingsManager : MonoBehaviour
                             GetIntSetting(Settings.RocksMin),
                             GetIntSetting(Settings.RocksMax));
                         break;
+                    case Settings.Theme:
+                        UiTheme = (Theme)intValue;
+                        break;
+                    default:
+                        throw new KeyNotFoundException(key);
                 }
 
                 break;
@@ -251,10 +270,11 @@ internal static class Settings
         BombsMin = "BombsMin",
         BombsMax = "BombsMax",
         RocksMin = "RocksMin",
-        RocksMax = "RocksMax"
+        RocksMax = "RocksMax",
+        Theme = "Theme"
         ;
 }
-internal static class StandardSettings
+internal static class DefaultSettings
 {
     public static readonly Dictionary<string, float> FloatSettings = new()
     {
@@ -275,6 +295,7 @@ internal static class StandardSettings
         { Settings.BombsMax, 20 },
         { Settings.RocksMin, 20 },
         { Settings.RocksMax, 50 },
+        { Settings.Theme, (int)Theme.Dark }
     };
 }
 

@@ -23,6 +23,7 @@
                 <ui:EnumField label="Theme" value="Dark" type="Theme, Assembly-CSharp" name="Theme" class="Setting">
                     <Bindings>
                         <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(4976798059552768)"/>
+                        <ui:DataBinding property="value" data-source-path="UiTheme" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:EnumField>
             </ui:VisualElement>

@@ -7,7 +7,8 @@ namespace gui
     {
         public MenuStateHandler menuStateHandler;
         public SettingsManager settingsManager;
-        
+        public ThemeStyleSheet[]  themeStyleSheets;
+
         private UIDocument _uiDocument;
 
         private Button _backButton;
@@ -19,6 +20,8 @@ namespace gui
             _uiDocument.enabled = true;
             _uiDocument.rootVisualElement.visible = false;
             
+            settingsManager.OnThemeChanged = ChangeTheme;
+            
             _backButton = _uiDocument.rootVisualElement.Q<Button>("Back");
             _resetButton = _uiDocument.rootVisualElement.Q<Button>("Reset");
 
@@ -27,6 +30,16 @@ namespace gui
             _backButton.RegisterCallback<ClickEvent>(_ => menuStateHandler.CloseSettingsMenu());
 
             _resetButton.RegisterCallback<ClickEvent>(_ => settingsManager.ResetWorldSettings());
+        }
+        
+        private void ChangeTheme(Theme theme)
+        {
+            _uiDocument.panelSettings.themeStyleSheet = theme switch
+            {
+                Theme.Dark => themeStyleSheets[1],
+                Theme.Light => themeStyleSheets[0],
+                _ => themeStyleSheets[1]
+            };
         }
     }
 }

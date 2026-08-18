@@ -791,6 +791,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::gui.SettingsUI
   menuStateHandler: {fileID: 3769822120862525807}
   settingsManager: {fileID: 6488889567148521681}
+  themeStyleSheets:
+  - {fileID: -4733365628477956816, guid: 480bc1cd9e080deeeb488cb5fa623eb2, type: 3}
+  - {fileID: -4733365628477956816, guid: 26076f96e89dabfd9bda799529648c02, type: 3}
 --- !u!1 &6999135811074871187
 GameObject:
   m_ObjectHideFlags: 0
