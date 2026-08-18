@@ -69,7 +69,7 @@ namespace logic
                     Destroy(other.gameObject);
                     break;
             }
-            countdown--;
+            // countdown--;
         }
 
         private void Explode()

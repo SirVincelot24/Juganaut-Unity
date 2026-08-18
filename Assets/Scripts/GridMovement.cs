@@ -7,7 +7,7 @@ using WorldItems;
 
 public class GridMovement : MonoBehaviour
 {
-    [SerializeField] private bool isRepeatedMovement = false;
+    [SerializeField] private bool isRepeatedMovement;
     [SerializeField] private float gridSize = 1f;
     [SerializeField] private float moveDuration = 0.1f;
 
