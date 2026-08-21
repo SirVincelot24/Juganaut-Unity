@@ -153,16 +153,21 @@ public class SettingsManager : MonoBehaviour
 
     private void SetLanguage(Language value)
     {
+        SystemLanguage language;
         switch (value)
         {
             case Language.Deutsch:
-                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier("de"));
+                language = SystemLanguage.German;
                 break;
             case Language.English:
+                language = SystemLanguage.English;
+                break;
+            case Language.System:
             default:
-                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier("en"));
+                language = Application.systemLanguage;
                 break;
         }
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier(language));
     }
 
     private void Awake()
@@ -339,5 +344,6 @@ public enum Theme
 public enum Language
 {
     English,
-    Deutsch
+    Deutsch,
+    System
 }
