@@ -19,16 +19,14 @@ namespace gui
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.enabled = true;
             _uiDocument.rootVisualElement.visible = false;
-            
+            _uiDocument.rootVisualElement.dataSource = settingsManager;
+
             settingsManager.OnThemeChanged = ChangeTheme;
-            
+
             _backButton = _uiDocument.rootVisualElement.Q<Button>("Back");
             _resetButton = _uiDocument.rootVisualElement.Q<Button>("Reset");
-
-            _uiDocument.rootVisualElement.dataSource = settingsManager; 
             
             _backButton.RegisterCallback<ClickEvent>(_ => menuStateHandler.CloseSettingsMenu());
-
             _resetButton.RegisterCallback<ClickEvent>(_ => settingsManager.ResetWorldSettings());
         }
         

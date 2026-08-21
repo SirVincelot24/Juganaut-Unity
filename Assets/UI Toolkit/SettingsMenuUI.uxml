@@ -7,7 +7,7 @@
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263511539539968)"/>
                 </Bindings>
             </ui:Button>
-            <ui:Label text="Settings" name="Title" class="Title">
+            <ui:Label text="Settings" name="Title" class="Title" picking-mode="Ignore">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:d875a30e779e4d6259e6ec1c5806bc40" entry="Id(263449891659776)"/>
                 </Bindings>
