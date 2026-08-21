@@ -26,6 +26,12 @@
                         <ui:DataBinding property="value" data-source-path="UiTheme" binding-mode="TwoWay"/>
                     </Bindings>
                 </ui:EnumField>
+                <ui:EnumField label="Language" value="English" type="Language, Assembly-CSharp" name="Language" class="Setting">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="label" table="GUID:4d6fa0088101c2439a22a676cd7c9436" entry="Id(263652455571456)"/>
+                        <ui:DataBinding property="value" data-source-path="CurrentLanguage" binding-mode="TwoWay"/>
+                    </Bindings>
+                </ui:EnumField>
             </ui:VisualElement>
             <ui:VisualElement name="GameRenderer" class="SettingSubContainer">
                 <ui:Label text="Renderer" name="Title" class="SettingsCategory SettingsCategoryTitle">

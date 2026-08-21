@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -105,6 +107,17 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    [CreateProperty]
+    public Language CurrentLanguage
+    {
+        get => (Language)_intSettings[Settings.Language];
+        set
+        {
+            _intSettings[Settings.Language] = (int)value;
+            SetLanguage(value);
+        }
+    }
+
     private readonly Dictionary<string, float> _floatSettings = new(DefaultSettings.FloatSettings);
 
     private readonly Dictionary<string, int> _intSettings = new(DefaultSettings.IntSettings);
@@ -136,6 +149,20 @@ public class SettingsManager : MonoBehaviour
     private void SetSfxVolume(float value)
     {
         audioMixer.SetFloat("SfxVolume", Mathf.Log10(value) * 20);
+    }
+
+    private void SetLanguage(Language value)
+    {
+        switch (value)
+        {
+            case Language.Deutsch:
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier("de"));
+                break;
+            case Language.English:
+            default:
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier("en"));
+                break;
+        }
     }
 
     private void Awake()
@@ -245,10 +272,12 @@ public class SettingsManager : MonoBehaviour
                     case Settings.Theme:
                         UiTheme = (Theme)intValue;
                         break;
+                    case Settings.Language:
+                        CurrentLanguage = (Language)intValue;
+                        break;
                     default:
                         throw new KeyNotFoundException(key);
                 }
-
                 break;
         }
     }
@@ -271,7 +300,8 @@ internal static class Settings
         BombsMax = "BombsMax",
         RocksMin = "RocksMin",
         RocksMax = "RocksMax",
-        Theme = "Theme"
+        Theme = "Theme",
+        Language = "Language"
         ;
 }
 internal static class DefaultSettings
@@ -295,7 +325,8 @@ internal static class DefaultSettings
         { Settings.BombsMax, 20 },
         { Settings.RocksMin, 20 },
         { Settings.RocksMax, 50 },
-        { Settings.Theme, (int)Theme.Dark }
+        { Settings.Theme, (int)Theme.Dark },
+        { Settings.Language, (int)Language.English },
     };
 }
 
@@ -303,4 +334,10 @@ public enum Theme
 {
     Light,
     Dark
+}
+
+public enum Language
+{
+    English,
+    Deutsch
 }
