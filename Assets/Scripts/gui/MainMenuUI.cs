@@ -36,8 +36,6 @@ namespace gui
             
             _root.EnableInClassList("landscape", isLandscape);
             _root.EnableInClassList("portrait", !isLandscape);
-            
-            Debug.Log(isLandscape + "x:" + resolution.x + " y:" + resolution.y);
         }
     }
 }
